@@ -1,0 +1,185 @@
+:root {
+    --fundo: #190F1B;
+    --rosa: #F9A1A9;
+    --suave: #FFC9CE;
+    --gelo: #FDFDFD;
+    --cinza: #544E58; /* Cinza sofisticado da sua paleta */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--fundo);
+    color: var(--gelo);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.palco {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Menu */
+.topo { padding: 25px 0; position: sticky; top: 0; z-index: 100; background: rgba(25, 15, 27, 0.85); backdrop-filter: blur(10px); }
+.menu { text-align: center; }
+.menu a { color: var(--gelo); text-decoration: none; font-size: 0.7rem; margin: 0 20px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; opacity: 0.6; transition: 0.4s; }
+.menu a:hover { opacity: 1; color: var(--rosa); }
+
+/* Header e Foto Personalizada */
+.perfil { padding: 80px 0 120px; text-align: center; }
+.moldura { 
+    position: relative; 
+    width: 180px; 
+    height: 180px; 
+    margin: 0 auto 35px; 
+    border: 1px solid rgba(249, 161, 169, 0.3); 
+    padding: 10px; 
+}
+
+.foto { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    border: 1px solid var(--rosa);
+}
+
+/* Flores Decorativas (Fundo e bordas removidos) */
+.flor1, .flor2, .flor3, .flor4, .flor5, .flor6 { 
+    color: var(--rosa); 
+    position: absolute; 
+    background: transparent; 
+    padding: 0;
+    z-index: 2; 
+}
+
+.flor1 { top: -15px; left: -15px; font-size: 1.5rem; }
+.flor2 { bottom: -15px; right: -15px; font-size: 1.5rem; }
+.flor3, .flor4, .flor5 { top: -30px; left: 35px; font-size: 2.0rem; }
+
+h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-style: italic; color: var(--suave); font-weight: 400; margin-bottom: 5px; }
+.bio { font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--cinza); font-weight: 400; }
+
+/* Blocos de Conteúdo */
+.quadro { position: relative; padding: 80px 60px; margin-bottom: 60px; border: 1px solid rgba(249, 161, 169, 0.15); background: rgba(255, 255, 255, 0.01); }
+.titulo { font-family: 'Playfair Display', serif; font-size: 2rem; font-style: italic; margin-bottom: 35px; font-weight: 400; }
+strong { color: var(--rosa); font-weight: 500; }
+
+/* Trajetória */
+.item { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid rgba(249, 161, 169, 0.1); padding-bottom: 20px; }
+.item h3 { font-size: 1.3rem; font-weight: 400; color: var(--suave); }
+.local, .data { color: var(--cinza); font-size: 0.8rem; letter-spacing: 1px; }
+
+/* Galeria Carrossel */
+.galeria { overflow: hidden; border-radius: 4px; }
+.trilho { display: flex; gap: 30px; animation: rolar 40s linear infinite; }
+.trilho:hover { animation-play-state: paused; }
+
+.obra { min-width: 420px; height: 280px; position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05); text-decoration: none; }
+.obra img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+.obra:hover img { opacity: 1; transform: scale(1.05); }
+
+.legenda { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, var(--fundo)); color: var(--gelo); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; text-align: center; opacity: 0; transition: 0.4s; }
+.obra:hover .legenda { opacity: 1; }
+
+@keyframes rolar { from { transform: translateX(0); } to { transform: translateX(-1350px); } }
+
+/* Footer */
+.base { padding: 140px 0 80px; text-align: center; border-top: 1px solid rgba(249, 161, 169, 0.1); background: linear-gradient(to bottom, var(--fundo), #0e080f); }
+.flor6 { position: relative; display: inline-block; margin-bottom: 25px; top: 0; left: 0; font-size: 1.8rem; }
+.base h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-style: italic; margin-bottom: 45px; font-weight: 400; }
+
+.social { display: flex; flex-direction: column; align-items: center; gap: 40px; }
+.botao { color: var(--gelo); text-decoration: none; font-size: 1rem; padding: 18px 45px; border: 1px solid var(--rosa); border-radius: 60px; transition: 0.5s; }
+.botao:hover { background: var(--rosa); color: var(--fundo); box-shadow: 0 10px 30px rgba(249, 161, 169, 0.2); transform: translateY(-3px); }
+
+.icones { display: flex; gap: 25px; }
+.link { color: var(--rosa); transition: 0.4s; opacity: 0.8; }
+.link:hover { transform: translateY(-8px); opacity: 1; color: var(--suave); }
+.svg { width: 30px; height: 30px; }
+
+.final { margin-top: 80px; font-size: 0.65rem; color: var(--cinza); letter-spacing: 2px; text-transform: uppercase; }
+
+/* Animação Inicial */
+.animar { animation: surgindo 2.5s ease-out; }
+@keyframes surgindo { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- Novo Layout de Stacks (Tags/Pills) --- */
+.skills-section {
+    margin-bottom: 80px;
+}
+
+.skills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    border: 1px solid rgba(249, 161, 169, 0.1);
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.skill-category {
+    flex: 1;
+    min-width: 200px;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.category-header span:last-child {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--cinza);
+}
+
+.flor-mini {
+    color: var(--rosa);
+    font-size: 1rem;
+}
+
+/* Estilo das Tags (Pills) */
+.skill-category {
+    flex: 1;
+    min-width: 250px; 
+    margin-bottom: 20px; 
+}
+
+.tag {
+    padding: 6px 16px;
+    border: 1px solid rgba(249, 161, 169, 0.2);
+    border-radius: 50px;
+    font-size: 0.80rem;
+    font-family: 'Inter', sans-serif;
+    color: var(--suave);
+    transition: all 0.4s ease;
+    cursor: default;
+}
+
+.tag:hover {
+    background: var(--rosa);
+    color: var(--fundo);
+    border-color: var(--rosa);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(249, 161, 169, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .skills-wrapper {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+    .tag {
+        font-size: 0.8rem;
+    }
+}
